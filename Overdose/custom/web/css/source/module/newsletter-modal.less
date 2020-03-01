@@ -1,0 +1,179 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true)  {
+  .newsletter-modal {
+    .modal-inner-wrap {
+      border: 8px solid @modal__border-color;
+      text-align: center;
+      text-transform: uppercase;
+      max-width: 820px;
+
+      .modal-header {
+        position: absolute;
+        right: -35px;
+        top: -45px;
+
+        .action-close {
+          background: @color-white;
+          border-radius: 10px;
+          width: 20px;
+          height: 20px;
+
+          &:before {
+            font-weight: bold;
+            .lib-font-size(10);
+            margin-top: 4px;
+            color: @color-black;
+          }
+        }
+      }
+
+      h3 {
+        text-transform: none;
+        margin-bottom: 60px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-weight: bold;
+      }
+
+      .divider {
+        border-bottom: 1px solid @color-gray-light1;
+        margin: 20px 0;
+        position: relative;
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          left: 49%;
+          bottom: -20px;
+          border: 10px solid transparent;
+          border-top: 10px solid @color-gray-light1;
+        }
+
+        &:after {
+          border-top: 10px solid white;
+          bottom: -19px;
+        }
+      }
+
+      .block.newsletter {
+        width: 100%;
+
+        .field {
+          .control:before {
+            display: none;
+          }
+        }
+
+        .form.subscribe {
+          .lib-vendor-prefix-display(flex);
+          .lib-vendor-prefix-flex-wrap(wrap);
+
+          .field.newsletter {
+            width: 100%;
+            margin-top: 5px;
+
+            .mage-error {
+              text-transform: none;
+            }
+
+            input {
+              padding-left: 10px;
+              height: 40px;
+              border: 1px solid @color-gray-light1;
+
+              &::placeholder {
+                color: #989898;
+              }
+            }
+          }
+
+          .actions {
+            width: 100%;
+            margin-top: 20px;
+
+            .action.subscribe.primary {
+              text-transform: uppercase;
+              font-weight: bold;
+              border-radius: 0;
+              .lib-font-size(11);
+
+              &:hover,
+              &:active {
+                -webkit-transition: background 0.4s ease;
+                -o-transition: background 0.4s ease;
+                transition: background 0.4s ease;
+                background-color: @button-primary__hover__background-color;
+                border-color: @button-primary__hover__border-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #newsletter-popup {
+    display: none;
+  }
+}
+
+//
+// Mobile
+// _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .modal-popup.modal-slide {
+    .modal-inner-wrap[class] {
+      background-color: @modal__background-color;
+    }
+  }
+}
+
+//
+// Tablet
+// _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .newsletter-modal {
+    .modal-inner-wrap {
+      h3 {
+        .lib-font-size(20);
+      }
+
+      h2 {
+        .lib-font-size(50);
+      }
+
+      p {
+        .lib-font-size(20);
+      }
+
+      .modal-content {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+
+      .block.newsletter {
+        .form.subscribe {
+          .actions {
+            .action.subscribe.primary {
+              .lib-font-size(25);
+              padding: 25px 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

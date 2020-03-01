@@ -1,0 +1,5 @@
+<div id="newsletter-popup" data-mage-init='{"newsletter-modal": {}}'>
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('modal_block')->toHtml();?>
+    <div class="divider"></div>
+    <?php echo $this->getLayout()->createBlock('Magento\Newsletter\Block\Subscribe')->setTemplate('subscribe-modal.phtml')->toHtml(); ?>
+</div>
